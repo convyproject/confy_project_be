@@ -53,6 +53,18 @@ export class AuthService {
       );
     }
 
+    if (user && user.status && user.status.id === 2) {
+      throw new HttpException(
+        {
+          status: HttpStatus.UNPROCESSABLE_ENTITY,
+          errors: {
+            email: 'emailNotVerified',
+          },
+        },
+        HttpStatus.UNPROCESSABLE_ENTITY,
+      );
+    }
+
     if (user.provider !== AuthProvidersEnum.email) {
       throw new HttpException(
         {
