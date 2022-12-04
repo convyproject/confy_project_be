@@ -23,7 +23,7 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             nvm install --lts
             cd ~/projects/convy-be
-            git pull origin main
+            git pull origin master
             chmod +x ./run.sh
             chmod +x ./serve.sh
             ./run.sh
