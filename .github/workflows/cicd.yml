@@ -25,5 +25,4 @@ jobs:
             cd ~/projects/convy-be
             git pull origin master
             chmod +x ./run.sh
-            chmod +x ./serve.sh
             ./run.sh
