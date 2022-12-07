@@ -1,0 +1,1 @@
+{"version":3,"file":"twitter.config.js","sourceRoot":"","sources":["../../src/config/twitter.config.ts"],"names":[],"mappings":";;AAAA,2CAA4C;AAE5C,kBAAe,IAAA,mBAAU,EAAC,SAAS,EAAE,GAAG,EAAE,CAAC,CAAC;IAC1C,WAAW,EAAE,OAAO,CAAC,GAAG,CAAC,oBAAoB;IAC7C,cAAc,EAAE,OAAO,CAAC,GAAG,CAAC,uBAAuB;CACpD,CAAC,CAAC,CAAC"}
