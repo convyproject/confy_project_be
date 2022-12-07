@@ -24,7 +24,7 @@ jobs:
             nvm install --lts
             cd ~/projects/convy-be
             touch .env
-            echo ${{secrets.ENV}} > .env
+            echo ${{secrets.ENV}} >> .env
             git pull origin master
             chmod +x ./run.sh
             ./run.sh
