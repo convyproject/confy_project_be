@@ -3,10 +3,10 @@ import { MigrationInterface, QueryRunner } from 'typeorm';
 export class init1670830836699 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(
-      `ALTER TABLE "user" ADD COLUMN fullName varchar(255)`,
+      `ALTER TABLE "user" ADD COLUMN "fullName" varchar(255)`,
     );
     await queryRunner.query(
-      `UPDATE "user" AS "u" SET fullName = CONCAT_WS(' ', "u"."firstName", "u"."lastName")`,
+      `UPDATE "user" AS "u" SET "fullName" = CONCAT_WS(' ', "u"."firstName", "u"."lastName")`,
     );
 
     await queryRunner.query(`ALTER TABLE "user" DROP COLUMN "firstName"`);
