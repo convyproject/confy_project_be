@@ -24,8 +24,7 @@ export class UserSeedService {
     if (countAdmin === 0) {
       await this.repository.save(
         this.repository.create({
-          firstName: 'Super',
-          lastName: 'Admin',
+          fullName: 'Super Admin',
           email: 'admin@example.com',
           password: 'secret',
           role: {
@@ -51,8 +50,7 @@ export class UserSeedService {
     if (countUser === 0) {
       await this.repository.save(
         this.repository.create({
-          firstName: 'John',
-          lastName: 'Doe',
+          fullName: 'John Doe',
           email: 'john.doe@example.com',
           password: 'secret',
           role: {

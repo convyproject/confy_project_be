@@ -30,11 +30,6 @@ __decorate([
     (0, class_validator_1.Allow)(),
     (0, swagger_1.ApiProperty)({ required: false }),
     __metadata("design:type", String)
-], AuthSocialLoginDto.prototype, "firstName", void 0);
-__decorate([
-    (0, class_validator_1.Allow)(),
-    (0, swagger_1.ApiProperty)({ required: false }),
-    __metadata("design:type", String)
-], AuthSocialLoginDto.prototype, "lastName", void 0);
+], AuthSocialLoginDto.prototype, "fullName", void 0);
 exports.AuthSocialLoginDto = AuthSocialLoginDto;
 //# sourceMappingURL=auth-social-login.dto.js.map

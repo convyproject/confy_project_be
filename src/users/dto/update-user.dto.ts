@@ -29,13 +29,9 @@ export class UpdateUserDto extends PartialType(CreateUserDto) {
 
   socialId?: string | null;
 
-  @ApiProperty({ example: 'John' })
+  @ApiProperty({ example: 'John Doe' })
   @IsOptional()
-  firstName?: string | null;
-
-  @ApiProperty({ example: 'Doe' })
-  @IsOptional()
-  lastName?: string | null;
+  fullName?: string | null;
 
   @ApiProperty({ type: () => FileEntity })
   @IsOptional()

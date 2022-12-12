@@ -107,8 +107,7 @@ let AuthService = class AuthService {
             });
             user = await this.usersService.create({
                 email: socialEmail,
-                firstName: socialData.firstName,
-                lastName: socialData.lastName,
+                fullName: socialData.fullName,
                 socialId: socialData.id,
                 provider: authProvider,
                 role,

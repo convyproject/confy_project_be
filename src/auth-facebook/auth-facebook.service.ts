@@ -36,8 +36,7 @@ export class AuthFacebookService {
     return {
       id: data.id,
       email: data.email,
-      firstName: data.first_name,
-      lastName: data.last_name,
+      fullName: data.full_name,
     };
   }
 }

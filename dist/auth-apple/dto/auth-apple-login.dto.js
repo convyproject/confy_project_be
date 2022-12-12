@@ -23,11 +23,6 @@ __decorate([
     (0, class_validator_1.Allow)(),
     (0, swagger_1.ApiProperty)({ required: false }),
     __metadata("design:type", String)
-], AuthAppleLoginDto.prototype, "firstName", void 0);
-__decorate([
-    (0, class_validator_1.Allow)(),
-    (0, swagger_1.ApiProperty)({ required: false }),
-    __metadata("design:type", String)
-], AuthAppleLoginDto.prototype, "lastName", void 0);
+], AuthAppleLoginDto.prototype, "fullName", void 0);
 exports.AuthAppleLoginDto = AuthAppleLoginDto;
 //# sourceMappingURL=auth-apple-login.dto.js.map

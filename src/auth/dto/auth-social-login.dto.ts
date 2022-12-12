@@ -14,9 +14,5 @@ export class AuthSocialLoginDto {
 
   @Allow()
   @ApiProperty({ required: false })
-  firstName?: string;
-
-  @Allow()
-  @ApiProperty({ required: false })
-  lastName?: string;
+  fullName?: string;
 }

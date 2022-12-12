@@ -6,8 +6,7 @@ export declare class CreateUserDto {
     password?: string;
     provider?: string;
     socialId?: string | null;
-    firstName: string | null;
-    lastName: string | null;
+    fullName: string | null;
     photo?: FileEntity | null;
     role?: Role | null;
     status?: Status;

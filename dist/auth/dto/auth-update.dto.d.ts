@@ -1,8 +1,7 @@
 import { FileEntity } from '../../files/entities/file.entity';
 export declare class AuthUpdateDto {
     photo?: FileEntity;
-    firstName?: string;
-    lastName?: string;
+    fullName?: string;
     password?: string;
     oldPassword: string;
 }

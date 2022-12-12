@@ -45,13 +45,9 @@ __decorate([
     __metadata("design:type", String)
 ], AuthRegisterLoginDto.prototype, "phoneNumber", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'John' }),
+    (0, swagger_1.ApiProperty)({ example: 'John doe' }),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
-], AuthRegisterLoginDto.prototype, "firstName", void 0);
-__decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Doe' }),
-    __metadata("design:type", String)
-], AuthRegisterLoginDto.prototype, "lastName", void 0);
+], AuthRegisterLoginDto.prototype, "fullName", void 0);
 exports.AuthRegisterLoginDto = AuthRegisterLoginDto;
 //# sourceMappingURL=auth-register-login.dto.js.map

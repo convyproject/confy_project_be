@@ -54,11 +54,7 @@ export class User extends EntityHelper {
 
   @Index()
   @Column({ nullable: true })
-  firstName: string | null;
-
-  @Index()
-  @Column({ nullable: true })
-  lastName: string | null;
+  fullName: string | null;
 
   @ManyToOne(() => FileEntity, {
     eager: true,

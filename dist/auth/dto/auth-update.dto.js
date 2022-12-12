@@ -25,17 +25,11 @@ __decorate([
     __metadata("design:type", file_entity_1.FileEntity)
 ], AuthUpdateDto.prototype, "photo", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'John' }),
+    (0, swagger_1.ApiProperty)({ example: 'John Doe' }),
     (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'mustBeNotEmpty' }),
     __metadata("design:type", String)
-], AuthUpdateDto.prototype, "firstName", void 0);
-__decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Doe' }),
-    (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'mustBeNotEmpty' }),
-    __metadata("design:type", String)
-], AuthUpdateDto.prototype, "lastName", void 0);
+], AuthUpdateDto.prototype, "fullName", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)(),
     (0, class_validator_1.IsOptional)(),

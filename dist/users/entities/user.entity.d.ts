@@ -11,8 +11,7 @@ export declare class User extends EntityHelper {
     setPassword(): Promise<void>;
     provider: string;
     socialId: string | null;
-    firstName: string | null;
-    lastName: string | null;
+    fullName: string | null;
     photo?: FileEntity | null;
     role?: Role | null;
     status?: Status;

@@ -66,12 +66,7 @@ __decorate([
     (0, typeorm_1.Index)(),
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
-], User.prototype, "firstName", void 0);
-__decorate([
-    (0, typeorm_1.Index)(),
-    (0, typeorm_1.Column)({ nullable: true }),
-    __metadata("design:type", String)
-], User.prototype, "lastName", void 0);
+], User.prototype, "fullName", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => file_entity_1.FileEntity, {
         eager: true,

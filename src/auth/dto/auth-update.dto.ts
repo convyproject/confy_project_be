@@ -11,15 +11,10 @@ export class AuthUpdateDto {
   })
   photo?: FileEntity;
 
-  @ApiProperty({ example: 'John' })
+  @ApiProperty({ example: 'John Doe' })
   @IsOptional()
   @IsNotEmpty({ message: 'mustBeNotEmpty' })
-  firstName?: string;
-
-  @ApiProperty({ example: 'Doe' })
-  @IsOptional()
-  @IsNotEmpty({ message: 'mustBeNotEmpty' })
-  lastName?: string;
+  fullName?: string;
 
   @ApiProperty()
   @IsOptional()

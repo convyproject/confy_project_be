@@ -39,15 +39,10 @@ __decorate([
     __metadata("design:type", String)
 ], UpdateUserDto.prototype, "password", void 0);
 __decorate([
-    (0, swagger_2.ApiProperty)({ example: 'John' }),
+    (0, swagger_2.ApiProperty)({ example: 'John Doe' }),
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)
-], UpdateUserDto.prototype, "firstName", void 0);
-__decorate([
-    (0, swagger_2.ApiProperty)({ example: 'Doe' }),
-    (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", String)
-], UpdateUserDto.prototype, "lastName", void 0);
+], UpdateUserDto.prototype, "fullName", void 0);
 __decorate([
     (0, swagger_2.ApiProperty)({ type: () => file_entity_1.FileEntity }),
     (0, class_validator_1.IsOptional)(),

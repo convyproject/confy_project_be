@@ -24,8 +24,7 @@ let AuthAppleService = class AuthAppleService {
         return {
             id: data.sub,
             email: data.email,
-            firstName: loginDto.firstName,
-            lastName: loginDto.lastName,
+            fullName: loginDto.fullName,
         };
     }
 };

@@ -36,10 +36,7 @@ export class AuthRegisterLoginDto {
   })
   phoneNumber: string;
 
-  @ApiProperty({ example: 'John' })
+  @ApiProperty({ example: 'John doe' })
   @IsNotEmpty()
-  firstName: string;
-
-  @ApiProperty({ example: 'Doe' })
-  lastName: string;
+  fullName: string;
 }

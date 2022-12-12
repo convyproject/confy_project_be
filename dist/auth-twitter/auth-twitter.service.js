@@ -32,7 +32,7 @@ let AuthTwitterService = class AuthTwitterService {
         return {
             id: data.id.toString(),
             email: data.email,
-            firstName: data.name,
+            fullName: data.name,
         };
     }
 };
