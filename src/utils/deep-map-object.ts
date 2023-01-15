@@ -1,5 +1,5 @@
-const deepMapObject = (data, callback) => {
-  const map = (value, key) => {
+const deepMapObject = (data: any, callback: any) => {
+  const map = (value: any, key: any) => {
     if (value !== undefined && value !== null && typeof value === 'object') {
       callback(value, key);
     }

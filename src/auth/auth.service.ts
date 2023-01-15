@@ -46,7 +46,10 @@ export class AuthService {
         {
           status: HttpStatus.UNPROCESSABLE_ENTITY,
           errors: {
-            email: 'notFound',
+            email: {
+              error: 'notFound',
+              message: 'Alamat e-mail / password salah',
+            },
           },
         },
         HttpStatus.UNPROCESSABLE_ENTITY,
@@ -58,7 +61,10 @@ export class AuthService {
         {
           status: HttpStatus.UNPROCESSABLE_ENTITY,
           errors: {
-            email: 'emailNotVerified',
+            email: {
+              error: 'emailNotVerified',
+              message: 'Alamat e-mail belum di-verifikasi',
+            },
           },
         },
         HttpStatus.UNPROCESSABLE_ENTITY,
@@ -70,7 +76,10 @@ export class AuthService {
         {
           status: HttpStatus.UNPROCESSABLE_ENTITY,
           errors: {
-            email: `needLoginViaProvider:${user.provider}`,
+            email: {
+              error: 'needLoginViaProvider:${user.provider}',
+              message: 'Membutuhkan login dari penyedia ${user.provider}',
+            },
           },
         },
         HttpStatus.UNPROCESSABLE_ENTITY,
@@ -94,7 +103,10 @@ export class AuthService {
         {
           status: HttpStatus.UNPROCESSABLE_ENTITY,
           errors: {
-            password: 'incorrectPassword',
+            password: {
+              error: 'notFound',
+              message: 'Alamat e-mail / password salah',
+            },
           },
         },
         HttpStatus.UNPROCESSABLE_ENTITY,
@@ -194,6 +206,7 @@ export class AuthService {
         {
           status: HttpStatus.NOT_FOUND,
           error: `notFound`,
+          message: 'Pengguna tidak ditemukan',
         },
         HttpStatus.NOT_FOUND,
       );
@@ -216,7 +229,10 @@ export class AuthService {
         {
           status: HttpStatus.UNPROCESSABLE_ENTITY,
           errors: {
-            email: 'emailNotExists',
+            email: {
+              error: 'notFound',
+              message: 'Alamat e-mail / password tidak ditemukan',
+            },
           },
         },
         HttpStatus.UNPROCESSABLE_ENTITY,
@@ -252,7 +268,7 @@ export class AuthService {
         {
           status: HttpStatus.UNPROCESSABLE_ENTITY,
           errors: {
-            hash: `notFound`,
+            hash: { error: `notFound`, message: 'Kode unik tidak ditemukan' },
           },
         },
         HttpStatus.UNPROCESSABLE_ENTITY,
@@ -288,7 +304,10 @@ export class AuthService {
             {
               status: HttpStatus.UNPROCESSABLE_ENTITY,
               errors: {
-                oldPassword: 'incorrectOldPassword',
+                oldPassword: {
+                  error: 'incorrectOldPassword',
+                  message: 'Password lama anda salah',
+                },
               },
             },
             HttpStatus.UNPROCESSABLE_ENTITY,
@@ -299,7 +318,10 @@ export class AuthService {
           {
             status: HttpStatus.UNPROCESSABLE_ENTITY,
             errors: {
-              oldPassword: 'missingOldPassword',
+              oldPassword: {
+                error: 'missingOldPassword',
+                message: 'Password lama anda tidak ditemukan',
+              },
             },
           },
           HttpStatus.UNPROCESSABLE_ENTITY,

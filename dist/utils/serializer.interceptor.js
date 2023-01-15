@@ -14,6 +14,7 @@ const deep_map_object_1 = require("./deep-map-object");
 let SerializerInterceptor = class SerializerInterceptor {
     intercept(context, next) {
         return next.handle().pipe((0, operators_1.map)((data) => {
+            console.log({ data });
             return (0, deep_map_object_1.default)(data, (value) => {
                 if (value.__entity === 'User') {
                     (0, user_response_serializer_1.default)(value);

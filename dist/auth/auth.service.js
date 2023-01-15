@@ -41,7 +41,10 @@ let AuthService = class AuthService {
             throw new common_1.HttpException({
                 status: common_1.HttpStatus.UNPROCESSABLE_ENTITY,
                 errors: {
-                    email: 'notFound',
+                    email: {
+                        error: 'notFound',
+                        message: 'Alamat e-mail / password salah',
+                    },
                 },
             }, common_1.HttpStatus.UNPROCESSABLE_ENTITY);
         }
@@ -49,7 +52,10 @@ let AuthService = class AuthService {
             throw new common_1.HttpException({
                 status: common_1.HttpStatus.UNPROCESSABLE_ENTITY,
                 errors: {
-                    email: 'emailNotVerified',
+                    email: {
+                        error: 'emailNotVerified',
+                        message: 'Alamat e-mail belum di-verifikasi',
+                    },
                 },
             }, common_1.HttpStatus.UNPROCESSABLE_ENTITY);
         }
@@ -57,7 +63,10 @@ let AuthService = class AuthService {
             throw new common_1.HttpException({
                 status: common_1.HttpStatus.UNPROCESSABLE_ENTITY,
                 errors: {
-                    email: `needLoginViaProvider:${user.provider}`,
+                    email: {
+                        error: 'needLoginViaProvider:${user.provider}',
+                        message: 'Membutuhkan login dari penyedia ${user.provider}',
+                    },
                 },
             }, common_1.HttpStatus.UNPROCESSABLE_ENTITY);
         }
@@ -73,7 +82,10 @@ let AuthService = class AuthService {
             throw new common_1.HttpException({
                 status: common_1.HttpStatus.UNPROCESSABLE_ENTITY,
                 errors: {
-                    password: 'incorrectPassword',
+                    password: {
+                        error: 'notFound',
+                        message: 'Alamat e-mail / password salah',
+                    },
                 },
             }, common_1.HttpStatus.UNPROCESSABLE_ENTITY);
         }
@@ -151,6 +163,7 @@ let AuthService = class AuthService {
             throw new common_1.HttpException({
                 status: common_1.HttpStatus.NOT_FOUND,
                 error: `notFound`,
+                message: 'Pengguna tidak ditemukan',
             }, common_1.HttpStatus.NOT_FOUND);
         }
         user.hash = null;
@@ -167,7 +180,10 @@ let AuthService = class AuthService {
             throw new common_1.HttpException({
                 status: common_1.HttpStatus.UNPROCESSABLE_ENTITY,
                 errors: {
-                    email: 'emailNotExists',
+                    email: {
+                        error: 'notFound',
+                        message: 'Pengguna tidak ditemukan',
+                    },
                 },
             }, common_1.HttpStatus.UNPROCESSABLE_ENTITY);
         }
@@ -198,7 +214,7 @@ let AuthService = class AuthService {
             throw new common_1.HttpException({
                 status: common_1.HttpStatus.UNPROCESSABLE_ENTITY,
                 errors: {
-                    hash: `notFound`,
+                    hash: { error: `notFound`, message: 'Kode unik tidak ditemukan' },
                 },
             }, common_1.HttpStatus.UNPROCESSABLE_ENTITY);
         }
@@ -223,7 +239,10 @@ let AuthService = class AuthService {
                     throw new common_1.HttpException({
                         status: common_1.HttpStatus.UNPROCESSABLE_ENTITY,
                         errors: {
-                            oldPassword: 'incorrectOldPassword',
+                            oldPassword: {
+                                error: 'incorrectOldPassword',
+                                message: 'Password lama anda salah',
+                            },
                         },
                     }, common_1.HttpStatus.UNPROCESSABLE_ENTITY);
                 }
@@ -232,7 +251,10 @@ let AuthService = class AuthService {
                 throw new common_1.HttpException({
                     status: common_1.HttpStatus.UNPROCESSABLE_ENTITY,
                     errors: {
-                        oldPassword: 'missingOldPassword',
+                        oldPassword: {
+                            error: 'missingOldPassword',
+                            message: 'Password lama anda tidak ditemukan',
+                        },
                     },
                 }, common_1.HttpStatus.UNPROCESSABLE_ENTITY);
             }

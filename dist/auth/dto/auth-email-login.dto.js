@@ -12,16 +12,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthEmailLoginDto = void 0;
 const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
-const is_exists_validator_1 = require("../../utils/validators/is-exists.validator");
 const class_transformer_1 = require("class-transformer");
 class AuthEmailLoginDto {
 }
 __decorate([
     (0, swagger_1.ApiProperty)({ example: 'test1@example.com' }),
     (0, class_transformer_1.Transform)(({ value }) => value.toLowerCase().trim()),
-    (0, class_validator_1.Validate)(is_exists_validator_1.IsExist, ['User'], {
-        message: 'emailNotExists',
-    }),
     __metadata("design:type", String)
 ], AuthEmailLoginDto.prototype, "email", void 0);
 __decorate([

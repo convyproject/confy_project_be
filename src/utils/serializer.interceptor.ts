@@ -15,6 +15,7 @@ export class SerializerInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable<unknown> {
     return next.handle().pipe(
       map((data) => {
+        console.log({ data });
         return deepMapObject(data, (value) => {
           if (value.__entity === 'User') {
             userResponseSerializer(value as User);
