@@ -7,23 +7,23 @@ export class AuthUpdateDto {
   @ApiProperty({ type: () => FileEntity })
   @IsOptional()
   @Validate(IsExist, ['FileEntity', 'id'], {
-    message: 'imageNotExists',
+    message: 'imageNotExists: Foto tidak ditemukan',
   })
   photo?: FileEntity;
 
   @ApiProperty({ example: 'John Doe' })
   @IsOptional()
-  @IsNotEmpty({ message: 'mustBeNotEmpty' })
+  @IsNotEmpty({ message: 'fullNameEmpty: Nama lengkap wajib diisi' })
   fullName?: string;
 
   @ApiProperty()
   @IsOptional()
-  @IsNotEmpty()
+  @IsNotEmpty({ message: 'passwordEmpty: Password bary wajib diisi' })
   @MinLength(6)
-  password?: string;
+  password: string;
 
   @ApiProperty()
   @IsOptional()
-  @IsNotEmpty({ message: 'mustBeNotEmpty' })
+  @IsNotEmpty({ message: 'oldPasswordEmpty: Password lama wajib diisi' })
   oldPassword: string;
 }

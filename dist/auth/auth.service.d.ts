@@ -22,7 +22,10 @@ export declare class AuthService {
         user: User;
     }>;
     register(dto: AuthRegisterLoginDto): Promise<void>;
-    confirmEmail(hash: string): Promise<void>;
+    confirmEmail(hash: string): Promise<{
+        token: string;
+        user: User;
+    }>;
     forgotPassword(email: string): Promise<void>;
     resetPassword(hash: string, password: string): Promise<void>;
     me(user: User): Promise<User>;

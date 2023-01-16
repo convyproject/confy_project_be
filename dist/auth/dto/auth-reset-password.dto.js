@@ -16,12 +16,12 @@ class AuthResetPasswordDto {
 }
 __decorate([
     (0, swagger_1.ApiProperty)(),
-    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'passwordEmpty: Password harus diisi' }),
     __metadata("design:type", String)
 ], AuthResetPasswordDto.prototype, "password", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)(),
-    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'hashEmpty: Kode unik harus diisi' }),
     __metadata("design:type", String)
 ], AuthResetPasswordDto.prototype, "hash", void 0);
 exports.AuthResetPasswordDto = AuthResetPasswordDto;

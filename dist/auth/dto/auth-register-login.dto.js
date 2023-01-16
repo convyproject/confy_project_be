@@ -20,33 +20,33 @@ __decorate([
     (0, swagger_1.ApiProperty)({ example: 'test1@example.com' }),
     (0, class_transformer_1.Transform)(({ value }) => value.toLowerCase().trim()),
     (0, class_validator_1.Validate)(is_not_exists_validator_1.IsNotExist, ['User'], {
-        message: 'emailAlreadyExists',
+        message: 'emailAlreadyExists: Alamat e-mail telah digunakan',
     }),
     (0, class_validator_1.IsEmail)(undefined, {
-        message: 'Email must be valid email',
+        message: 'emailNotValid: Masukkan alamat e-mail yang valid',
     }),
     __metadata("design:type", String)
 ], AuthRegisterLoginDto.prototype, "email", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)(),
     (0, class_validator_1.MinLength)(8, {
-        message: '//Password must be atleast 8 characters',
+        message: 'passwordMinLength: Password harus mempunyai minimal 8 karakter',
     }),
     (0, class_validator_1.Matches)(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])/, {
-        message: 'Password must be atleast 1 uppercase 1 lowercase 1 number',
+        message: 'passwordFormatNotValid: Password harus mempunyai setidaknya 1 huruf kapital, 1 huruf kecil dan 1 nomer',
     }),
     __metadata("design:type", String)
 ], AuthRegisterLoginDto.prototype, "password", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({ example: '+62823' }),
     (0, class_validator_1.IsPhoneNumber)(undefined, {
-        message: 'Phone number must be valid phone number',
+        message: 'phoneNumberNotValid: Masukkan nomer telepon yang valid',
     }),
     __metadata("design:type", String)
 ], AuthRegisterLoginDto.prototype, "phoneNumber", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({ example: 'John doe' }),
-    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'emptyFullname: Nama lengkap harus diisi' }),
     __metadata("design:type", String)
 ], AuthRegisterLoginDto.prototype, "fullName", void 0);
 exports.AuthRegisterLoginDto = AuthRegisterLoginDto;

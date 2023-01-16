@@ -20,27 +20,27 @@ __decorate([
     (0, swagger_1.ApiProperty)({ type: () => file_entity_1.FileEntity }),
     (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.Validate)(is_exists_validator_1.IsExist, ['FileEntity', 'id'], {
-        message: 'imageNotExists',
+        message: 'imageNotExists: Foto tidak ditemukan',
     }),
     __metadata("design:type", file_entity_1.FileEntity)
 ], AuthUpdateDto.prototype, "photo", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({ example: 'John Doe' }),
     (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'mustBeNotEmpty' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'fullNameEmpty: Nama lengkap wajib diisi' }),
     __metadata("design:type", String)
 ], AuthUpdateDto.prototype, "fullName", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)(),
     (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'passwordEmpty: Password bary wajib diisi' }),
     (0, class_validator_1.MinLength)(6),
     __metadata("design:type", String)
 ], AuthUpdateDto.prototype, "password", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)(),
     (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.IsNotEmpty)({ message: 'mustBeNotEmpty' }),
+    (0, class_validator_1.IsNotEmpty)({ message: 'oldPasswordEmpty: Password lama wajib diisi' }),
     __metadata("design:type", String)
 ], AuthUpdateDto.prototype, "oldPassword", void 0);
 exports.AuthUpdateDto = AuthUpdateDto;

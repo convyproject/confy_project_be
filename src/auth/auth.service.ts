@@ -47,8 +47,7 @@ export class AuthService {
           status: HttpStatus.UNPROCESSABLE_ENTITY,
           errors: {
             email: {
-              error: 'notFound',
-              message: 'Alamat e-mail / password salah',
+              message: 'notFound: Alamat e-mail / password salah',
             },
           },
         },
@@ -62,8 +61,7 @@ export class AuthService {
           status: HttpStatus.UNPROCESSABLE_ENTITY,
           errors: {
             email: {
-              error: 'emailNotVerified',
-              message: 'Alamat e-mail belum di-verifikasi',
+              message: 'emailNotVerified: Alamat e-mail belum di-verifikasi',
             },
           },
         },
@@ -77,8 +75,8 @@ export class AuthService {
           status: HttpStatus.UNPROCESSABLE_ENTITY,
           errors: {
             email: {
-              error: 'needLoginViaProvider:${user.provider}',
-              message: 'Membutuhkan login dari penyedia ${user.provider}',
+              message:
+                'needLoginViaProvider-${user.provider}: Membutuhkan login dari penyedia ${user.provider}',
             },
           },
         },
@@ -104,8 +102,7 @@ export class AuthService {
           status: HttpStatus.UNPROCESSABLE_ENTITY,
           errors: {
             password: {
-              error: 'notFound',
-              message: 'Alamat e-mail / password salah',
+              message: 'notFound: Alamat e-mail / password salah',
             },
           },
         },
@@ -196,7 +193,7 @@ export class AuthService {
     });
   }
 
-  async confirmEmail(hash: string): Promise<void> {
+  async confirmEmail(hash: string): Promise<{ token: string; user: User }> {
     const user = await this.usersService.findOne({
       hash,
     });
@@ -205,8 +202,7 @@ export class AuthService {
       throw new HttpException(
         {
           status: HttpStatus.NOT_FOUND,
-          error: `notFound`,
-          message: 'Pengguna tidak ditemukan',
+          message: 'notFound: Pengguna tidak ditemukan',
         },
         HttpStatus.NOT_FOUND,
       );
@@ -217,6 +213,13 @@ export class AuthService {
       id: StatusEnum.active,
     });
     await user.save();
+
+    const token = await this.jwtService.sign({
+      id: user.id,
+      role: user.role,
+    });
+
+    return { token, user: user };
   }
 
   async forgotPassword(email: string): Promise<void> {
@@ -230,8 +233,7 @@ export class AuthService {
           status: HttpStatus.UNPROCESSABLE_ENTITY,
           errors: {
             email: {
-              error: 'notFound',
-              message: 'Alamat e-mail / password tidak ditemukan',
+              message: 'notFound: Alamat e-mail / password tidak ditemukan',
             },
           },
         },
@@ -268,7 +270,7 @@ export class AuthService {
         {
           status: HttpStatus.UNPROCESSABLE_ENTITY,
           errors: {
-            hash: { error: `notFound`, message: 'Kode unik tidak ditemukan' },
+            hash: { message: 'notFound: Kode unik tidak ditemukan' },
           },
         },
         HttpStatus.UNPROCESSABLE_ENTITY,
@@ -305,8 +307,7 @@ export class AuthService {
               status: HttpStatus.UNPROCESSABLE_ENTITY,
               errors: {
                 oldPassword: {
-                  error: 'incorrectOldPassword',
-                  message: 'Password lama anda salah',
+                  message: 'incorrectOldPassword: Password lama anda salah',
                 },
               },
             },
@@ -319,8 +320,8 @@ export class AuthService {
             status: HttpStatus.UNPROCESSABLE_ENTITY,
             errors: {
               oldPassword: {
-                error: 'missingOldPassword',
-                message: 'Password lama anda tidak ditemukan',
+                message:
+                  'missingOldPassword: Password lama anda tidak ditemukan',
               },
             },
           },

@@ -16,7 +16,7 @@ class AuthConfirmEmailDto {
 }
 __decorate([
     (0, swagger_1.ApiProperty)(),
-    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsNotEmpty)({ message: 'emptyHash: Masukkan kode unik' }),
     __metadata("design:type", String)
 ], AuthConfirmEmailDto.prototype, "hash", void 0);
 exports.AuthConfirmEmailDto = AuthConfirmEmailDto;

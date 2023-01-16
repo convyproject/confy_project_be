@@ -17,12 +17,17 @@ class AuthEmailLoginDto {
 }
 __decorate([
     (0, swagger_1.ApiProperty)({ example: 'test1@example.com' }),
+    (0, class_validator_1.IsNotEmpty)({
+        message: 'emailEmpty: Alamat e-mail harus diisi',
+    }),
     (0, class_transformer_1.Transform)(({ value }) => value.toLowerCase().trim()),
     __metadata("design:type", String)
 ], AuthEmailLoginDto.prototype, "email", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)(),
-    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsNotEmpty)({
+        message: 'passwordEmpty: Password harus diisi',
+    }),
     __metadata("design:type", String)
 ], AuthEmailLoginDto.prototype, "password", void 0);
 exports.AuthEmailLoginDto = AuthEmailLoginDto;

@@ -17,7 +17,10 @@ export declare class AuthController {
         user: import("../users/entities/user.entity").User;
     }>;
     register(createUserDto: AuthRegisterLoginDto): Promise<void>;
-    confirmEmail(confirmEmailDto: AuthConfirmEmailDto): Promise<void>;
+    confirmEmail(confirmEmailDto: AuthConfirmEmailDto): Promise<{
+        token: string;
+        user: import("../users/entities/user.entity").User;
+    }>;
     forgotPassword(forgotPasswordDto: AuthForgotPasswordDto): Promise<void>;
     resetPassword(resetPasswordDto: AuthResetPasswordDto): Promise<void>;
     me(request: any): Promise<import("../users/entities/user.entity").User>;

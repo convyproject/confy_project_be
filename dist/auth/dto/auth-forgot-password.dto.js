@@ -18,7 +18,9 @@ class AuthForgotPasswordDto {
 __decorate([
     (0, swagger_1.ApiProperty)(),
     (0, class_transformer_1.Transform)(({ value }) => value.toLowerCase().trim()),
-    (0, class_validator_1.IsEmail)(),
+    (0, class_validator_1.IsEmail)({
+        message: 'emailEmpty: Alamat e-mail harus diisi',
+    }),
     __metadata("design:type", String)
 ], AuthForgotPasswordDto.prototype, "email", void 0);
 exports.AuthForgotPasswordDto = AuthForgotPasswordDto;

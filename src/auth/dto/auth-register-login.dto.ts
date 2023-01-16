@@ -14,29 +14,30 @@ export class AuthRegisterLoginDto {
   @ApiProperty({ example: 'test1@example.com' })
   @Transform(({ value }) => value.toLowerCase().trim())
   @Validate(IsNotExist, ['User'], {
-    message: 'emailAlreadyExists',
+    message: 'emailAlreadyExists: Alamat e-mail telah digunakan',
   })
   @IsEmail(undefined, {
-    message: 'Email must be valid email',
+    message: 'emailNotValid: Masukkan alamat e-mail yang valid',
   })
   email: string;
 
   @ApiProperty()
   @MinLength(8, {
-    message: '//Password must be atleast 8 characters',
+    message: 'passwordMinLength: Password harus mempunyai minimal 8 karakter',
   })
   @Matches(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])/, {
-    message: 'Password must be atleast 1 uppercase 1 lowercase 1 number',
+    message:
+      'passwordFormatNotValid: Password harus mempunyai setidaknya 1 huruf kapital, 1 huruf kecil dan 1 nomer',
   })
   password: string;
 
   @ApiProperty({ example: '+62823' })
   @IsPhoneNumber(undefined, {
-    message: 'Phone number must be valid phone number',
+    message: 'phoneNumberNotValid: Masukkan nomer telepon yang valid',
   })
   phoneNumber: string;
 
   @ApiProperty({ example: 'John doe' })
-  @IsNotEmpty()
+  @IsNotEmpty({ message: 'emptyFullname: Nama lengkap harus diisi' })
   fullName: string;
 }
